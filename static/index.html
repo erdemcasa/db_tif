@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>db_tif - Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">db_tif</div>
+        <div class="nav-links">
+            <a href="index.html" class="active">Données</a>
+            <a href="add.html">Ajouter</a>
+        </div>
+    </nav>
+
+    <main class="container">
+        <header class="page-header">
+            <h1>Contenu de la base de données</h1>
+            <a href="add.html" class="btn primary">Nouveau TIF</a>
+        </header>
+
+        <div class="table-container">
+            <table id="tifsTable">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>TIF Label</th>
+                        <th>Auteur</th>
+                        <th>Date de création</th>
+                    </tr>
+                </thead>
+                <tbody id="tifsBody">
+                    <tr><td colspan="4" class="loading">Chargement des données...</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <script src="app.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', fetchTifs);
+    </script>
+</body>
+</html>

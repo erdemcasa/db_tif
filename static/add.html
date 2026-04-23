@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>db_tif - Ajouter</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">db_tif</div>
+        <div class="nav-links">
+            <a href="index.html">Données</a>
+            <a href="add.html" class="active">Ajouter</a>
+        </div>
+    </nav>
+
+    <main class="container">
+        <header class="page-header">
+            <h1>Ajouter un nouveau TIF</h1>
+        </header>
+
+        <div class="form-card">
+            <form id="addTifForm">
+                <div id="error-message" class="error-alert hidden"></div>
+                <div id="success-message" class="success-alert hidden">Donnée ajoutée avec succès !</div>
+
+                <div class="form-group">
+                    <label for="tif_label">TIF Label <span class="required">*</span></label>
+                    <input type="text" id="tif_label" name="tif_label" placeholder="ex: mon_fichier.tif" required pattern=".*tif$" title="Le label doit obligatoirement se terminer par 'tif'">
+                    <span class="help-text">Doit se terminer par "tif"</span>
+                </div>
+
+                <div class="form-group">
+                    <label for="author">Auteur <span class="required">*</span></label>
+                    <input type="text" id="author" name="author" placeholder="Nom de l'auteur" required>
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" class="btn primary" id="submitBtn">Enregistrer</button>
+                    <a href="index.html" class="btn secondary">Annuler</a>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <script src="app.js"></script>
+    <script>
+        document.getElementById('addTifForm').addEventListener('submit', handleFormSubmit);
+    </script>
+</body>
+</html>
